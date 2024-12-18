@@ -1,0 +1,60 @@
+:root {
+  --primary: var(--blue);
+  --secondary: var(--cyan);
+  --tertiary: var(--pink);
+  --background: var(--white-dark);
+  --background-lighter: var(--white);
+  --stroke: var(--blue-dark);
+
+  --blue: hsl(224, 63%, 25%);
+  --blue-dark: hsl(224, 100%, 17%);
+  --cyan: hsl(187, 55%, 71%);
+  --cyan-dark: hsl(187, 55%, 50%);
+  --white: hsl(42, 93%, 99%);
+  --white-dark: hsl(42, 93%, 95%);
+  --purple: hsl(271, 54%, 83%);
+  --pink: hsl(337, 86%, 80%);
+  --pink-dark: hsl(337, 85%, 74%);
+  --orange: hsl(17, 100%, 80%);
+  --yellow: hsl(51, 84%, 80%);
+  --green: hsl(129, 60%, 85%);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --primary: var(--blue);
+    --secondary: var(--cyan);
+    --tertiary: var(--pink);
+    --background: var(--white-dark);
+    --background-lighter: var(--white);
+    --stroke: var(--blue-dark);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary: var(--white-dark);
+    --secondary: var(--cyan-dark);
+    --tertiary: var(--pink-dark);
+    --background: var(--blue);
+    --background-lighter: var(--white);
+    --stroke: var(--blue-dark);
+  }
+}
+
+.light-scheme {
+  --primary: var(--blue);
+  --secondary: var(--cyan);
+  --tertiary: var(--pink);
+  --background: var(--white-dark);
+  --background-lighter: var(--white);
+  --stroke: var(--blue-dark);
+}
+
+.dark-scheme {
+  --primary: var(--white-dark);
+  --secondary: var(--cyan-dark);
+  --tertiary: var(--pink-dark);
+  --background: var(--blue);
+  --background-lighter: var(--white);
+  --stroke: var(--blue-dark);
+}

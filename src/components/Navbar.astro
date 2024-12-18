@@ -1,0 +1,120 @@
+---
+import SvgIcon from './SvgIcon.astro';
+
+const LINKS = [
+	{
+		name: 'Home',
+		href: '/',
+		icon: 'home',
+	},
+	{
+		name: 'Projects',
+		href: '/projects',
+		icon: 'folder',
+	},
+	{
+		name: 'Photos',
+		href: '/photos',
+		icon: 'camera',
+	},
+	{
+		name: 'Blog',
+		href: '/blog',
+		icon: 'book',
+	},
+	{
+		name: 'About',
+		href: '/about',
+		icon: 'user',
+	},
+] as const;
+---
+
+<nav class="nav">
+	<ul class="links">
+		{
+			LINKS.map((link) => (
+				<li class="links__item">
+					<a href={link.href} class="links__link">
+						<SvgIcon name={link.icon} class="links__icon" size="l" />
+						<span class="links__name">{link.name}</span>
+					</a>
+				</li>
+			))
+		}
+	</ul>
+</nav>
+
+<style lang="scss" is:global>
+	.nav {
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		width: 100%;
+		max-width: var(--screen-m);
+		margin: var(--space-l) auto;
+		padding: var(--space-s);
+		z-index: 1;
+		&::before {
+			content: '';
+			inset: 0;
+			height: 100%;
+			position: absolute;
+			border: var(--border);
+			border-radius: var(--border-radius);
+			background-color: var(--secondary);
+			box-shadow: 0px 4px 0 var(--stroke);
+		}
+	}
+	.links {
+		position: relative;
+		display: flex;
+		justify-content: space-around;
+		z-index: 1;
+
+		&__item {
+			display: flex;
+			justify-content: center;
+			height: 100%;
+
+			&:hover {
+				.links__link {
+					transform: translateY(-100%);
+				}
+				.links__name {
+					opacity: 1;
+				}
+			}
+		}
+
+		&__link {
+			position: absolute;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			text-decoration: none;
+			color: var(--primary);
+			transform: translateY(-90%);
+			transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+		}
+
+		&__icon {
+			position: relative;
+			z-index: 1;
+		}
+
+		&__name {
+			position: absolute;
+			transform: translateY(-175%);
+			background-color: hsla(261, 100%, 18%, 0.05);
+			padding: 2px 6px;
+			border-radius: 8px;
+			backdrop-filter: blur(2px);
+			opacity: 0;
+			transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+			pointer-events: none;
+		}
+	}
+</style>

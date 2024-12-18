@@ -1,0 +1,54 @@
+@use "./breakpoints" as *;
+@use "./size";
+@use "./typography";
+@use "./space";
+@use "./color";
+@use "./reset";
+
+body {
+    color: var(--primary);
+    background-color: var(--background);
+    font-family:
+        Nunito Variable,
+        sans-serif;
+    margin: 0 var(--space-s-m);
+    max-width: var(--max-width);
+    margin: auto;
+
+    transition: background-color 0.15s linear;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.sr-only-screen-only-s-sreen {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+    @media screen and (min-width: $screen-s) {
+        position: initial;
+        width: initial;
+        height: initial;
+        padding: initial;
+        margin: initial;
+        overflow: initial;
+        clip: initial;
+        white-space: initial;
+        border-width: initial;
+    }
+}

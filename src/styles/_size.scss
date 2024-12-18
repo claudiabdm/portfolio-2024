@@ -1,0 +1,16 @@
+@use "./breakpoints" as *;
+
+:root {
+    --icon-s: 12px;
+    --icon-m: 24px;
+    --icon-l: 50px;
+    --screen-s: #{$screen-s};
+    --screen-m: #{$screen-m};
+    --screen-l: #{$screen-l};
+    --max-width: var(--screen-l);
+    --navbar-height: calc(var(--space-s) * 2);
+    --border-radius: 16px;
+    --border-width: 2px;
+    --border: var(--border-width) solid var(--stroke);
+    --stroke-width: 4px;
+}

@@ -1,0 +1,20 @@
+---
+import HeaderDarkModeSwitch from './HeaderDarkModeSwitch.astro';
+import HeaderLangSwitch from './HeaderLangSwitch.astro';
+import Navbar from './Navbar.astro';
+---
+
+<header class="header">
+	<HeaderLangSwitch />
+	<HeaderDarkModeSwitch />
+	<Navbar />
+</header>
+
+<style lang="scss" is:global>
+	.header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: var(--space-s);
+	}
+</style>

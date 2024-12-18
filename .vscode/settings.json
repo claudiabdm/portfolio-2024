@@ -1,0 +1,13 @@
+{
+	"editor.formatOnSave": true,
+	"prettier.bracketSameLine": false,
+	"prettier.useTabs": true,
+	"prettier.singleAttributePerLine": false,
+	"prettier.proseWrap": "preserve",
+	"prettier.singleQuote": true,
+	"editor.defaultFormatter": "astro-build.astro-vscode",
+	"editor.defaultFoldingRangeProvider": "astro-build.astro-vscode",
+	"[svg]": {
+		"editor.defaultFormatter": "jock.svg"
+	}
+}

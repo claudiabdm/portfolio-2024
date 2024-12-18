@@ -1,0 +1,52 @@
+---
+import SvgIcon from './SvgIcon.astro';
+// TODO add lang switch logic
+---
+
+<div class="lang-switch">
+	<SvgIcon class="lang-switch__icon lang-switch__globe" name="globe" size="s" />
+	<label for="language" class="sr-only">Choose a language: </label>
+	<select class="lang-switch__select" name="language" id="language">
+		<option class="lang-switch__opt" value="en" selected>en</option>
+		<option class="lang-switch__opt" value="es">es</option>
+	</select>
+	<SvgIcon class="lang-switch__icon lang-switch__arrow" name="arrow-down" size="s" />
+</div>
+
+<style lang="scss" is:global>
+	.lang-switch {
+		--padding-x: 10px;
+		--padding-y: 4px;
+		position: relative;
+		display: flex;
+		align-items: center;
+		width: 54px * 1.5;
+		height: 54px / 1.5;
+		background-color: var(--tertiary);
+		border: var(--border);
+		border-radius: var(--border-radius);
+		padding: var(--padding-y);
+		&__icon {
+			position: absolute;
+			pointer-events: none;
+		}
+		&__globe {
+			left: calc(var(--border-width) * 2 + var(--padding-y) * 2);
+		}
+		&__arrow {
+			right: calc(var(--border-width) * 2 + var(--padding-y) * 2);
+		}
+		&__select {
+			width: 100%;
+			padding: var(--padding-y) calc(var(--icon-s) + var(--padding-x)) var(--padding-y)
+				calc(var(--icon-s) + var(--padding-x));
+			border: var(--border);
+			border-radius: calc(var(--border-radius) - var(--padding-y));
+			background-color: var(--white-dark);
+			color: var(--stroke);
+			font-size: 16px;
+			text-transform: uppercase;
+			appearance: none;
+		}
+	}
+</style>
