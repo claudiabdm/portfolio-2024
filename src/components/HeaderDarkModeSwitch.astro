@@ -90,8 +90,7 @@ import SvgIcon from './SvgIcon.astro';
 
 		&__svg {
 			padding: 6px;
-			border-left: var(--border);
-			border-right: var(--border);
+			border: var(--border);
 			z-index: 1;
 			transition:
 				transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
@@ -99,7 +98,7 @@ import SvgIcon from './SvgIcon.astro';
 				fill 0.25s cubic-bezier(0.22, 1, 0.36, 1);
 			&--light {
 				background: var(--white-dark);
-				border-top: var(--border);
+				border-bottom: none;
 				border-top-right-radius: calc(var(--border-radius) - var(--padding-y));
 				border-top-left-radius: calc(var(--border-radius) - var(--padding-y));
 				transform-origin: center bottom;
