@@ -25,7 +25,6 @@
 
 	const elements = ids.reduce((acc, id) => {
 		const elem = (svg as any).getElementById(id);
-		console.log(elem);
 		if (elem instanceof SVGElement) {
 			acc[id] = {
 				elem,
@@ -350,15 +349,12 @@
 
 <style lang="scss">
 	.avatar {
-		min-width: 280px;
-		max-width: 50vw;
-		height: 100%;
-	}
-
-	.avatar {
 		display: block;
-		margin: auto;
+		min-width: 280px;
+		height: 100%;
 		max-height: 100vh;
+
+		padding: var(--space-s);
 
 		#eyes-close-up,
 		#eyes-happy {
